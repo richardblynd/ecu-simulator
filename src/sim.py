@@ -50,6 +50,26 @@ def golf_mqb_final_fix():
                 elif "2211F1" in raw_input:
                     resp = b"7E8 05 62 11 F1 7D 00"
 
+                # boost pressure actual (hpa)
+                elif "2211F0" in raw_input:
+                    resp = b"7E8 05 62 11 F0 7D 00" # 2500
+
+                # intake manifold pressure raw value (hpa)
+                elif "2211DC" in raw_input:
+                    resp = b"7E8 05 62 11 DC 7D 00" # 2500
+
+                # ATF temperature DSG/S-Tronic
+                elif "222104" in raw_input:
+                    resp = b"7E8 05 62 21 04 0E 93" # 14°C
+
+                # Clutch 1 actual pressure (bar)
+                elif "2238EB" in raw_input:
+                    resp = b"7E8 05 62 38 EB DC 05" # 15 bar
+
+                # Clutch 2 actual pressure (bar)
+                elif "2238EA" in raw_input:
+                    resp = b"7E8 05 62 38 EA DC 05" # 15 bar
+
                 else:
                     resp = b"OK"
 
